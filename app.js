@@ -9,17 +9,16 @@ var fs = require("fs");
 var multer = require("multer");
 
 var Addnewprod = require("./model/addnewprod.js");
+var Image = require("./model/images.js");
+
+//setting ejs
+app.set("view engine","ejs");
+
 //setting up bodyparser
 app.use(bodyParser.urlencoded({extended:true}));
 
 //setting up mongoose
-mongoose.connect("mongodb://localhost/imageupload");
-
-var imageschema = new mongoose.Schema({
-    image:String
-});
-
-var Image = mongoose.model("Image",imageschema);
+mongoose.connect("mongodb://localhost/Products");
 
 //Initializing multer constraints
 var storage = multer.diskStorage({
@@ -35,10 +34,32 @@ var upload = multer({
     storage:storage
 });
 
-
-//configuring the home route
+//configure the home route
 
 app.get("/",function(req,res){
+    res.render("home");
+});
+
+//configuring addnewproduct routes
+
+app.get("/addnewproduct",function(req,res){
+    res.render("addnewproduct");
+});
+
+app.post("/addnewproduct",function(req,res){
+    Addnewprod.create(req.body.prod,function(err,createdproduct){
+        if(err){
+            console.log(err);
+        }
+        else{
+            console.log(createdproduct);
+            res.redirect("/addnewproduct");
+        }
+    })
+});
+//configuring the image route
+
+app.get("/uploadphoto",function(req,res){
     res.sendFile(__dirname + '/index.html');
 });
 
@@ -69,6 +90,12 @@ app.post("/uploadPhoto",upload.single("myImage"),function(req,res,next){
         res.contentType(finalImg.contentType);
         res.send(finalImg.image);
     });
+});
+
+//setting up the cancel button
+
+app.get("/addnewproduct/cancel",function(req,res){
+    res.redirect("/");
 });
 
 //Server is listening on port 3000
