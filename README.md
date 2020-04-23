@@ -1,5 +1,4 @@
-# Workinprogress
-Daily workinprogress
+# Work in progress
 ==============================================
 Add new Products and Product attribute section
 ==============================================
