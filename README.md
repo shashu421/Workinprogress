@@ -12,3 +12,7 @@ Day2:
 2) Created a user view to manually add data(goto /addnewproducts) and link it with routes.
 3) Completed addnewproduct section.
 4) Now working on product attributes section.
+
+Day3:
+1)Almost completed Product attribute section.
+2)Have created all CRUD api's for product attributes.
