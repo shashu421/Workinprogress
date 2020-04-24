@@ -1,0 +1,24 @@
+<%- include("partials/header") %>
+<div class="container-md">
+    <div class="container-fluid">
+        <form action="/productattribute/new" method="POST">
+            <div class="form-group">
+            <label for="exampleInputEmail1">Name</label>
+            <input type="text" class="form-control" name = "prodattr[Name]" id="exampleInputEmail1" placeholder="Enter name">
+            </div>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Variation</label>
+                <select class="form-control" name = "prodattr[Variation]" id="exampleFormControlSelect1">
+                  <option>VS</option>
+                  <option>S</option>
+                  <option>M</option>
+                  <option>L</option>
+                  <option>XL</option>
+                  <option>XXL</option>
+                </select>
+              </div>
+            <button type="submit" class="btn btn-primary">Add new</button>
+            <button type="submit" class="btn btn-primary">Cancel</button>
+        </form>
+    </div>
+<%- include("partials/footer") %>

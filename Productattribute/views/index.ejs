@@ -1,0 +1,16 @@
+<%- include("partials/header") %>
+<div class="container">
+        <% product.forEach(function(product){ %>
+            <div class="container">
+                <h4><strong>Name : </strong> <%= product.Name %> </h4>
+                <h4><strong>Attribute id :</strong> <%= product._id %></h2>
+                <h4><strong>Variation: </strong> <%= product.Variation %> </h2>
+                <a href="/productattribute/<%= product._id %>/edit"><button class="btn btn-primary">Edit</button></a>
+                <form action="/productattribute/<%= product._id %>?_method=DELETE" method="POST"><button class="btn btn-primary">Delete</button></form>
+                <hr>
+            </div>
+        <% }); %>
+        <a href="/productattribute/new"><button class="btn btn-primary">Add Product attribute</button></a>
+    </div>
+</div>
+<%- include("partials/footer") %>
