@@ -1,0 +1,50 @@
+<%- include("partials/header") %>
+
+<div class="ui main text container segment">
+    <h1>Welcome to addnewproduct page!!</h1>
+    <div class="ui huge header">Add new Product</div>
+    <form class="ui form" action="/addnewproduct" method="POST">
+        <div class="ui form">
+            <div class="field">
+                <label>Product Name</label>
+                <input type="text" name="prod[productName]" placeholder="Enter the name of Product">
+            </div>
+            <div class="field">
+              <label>Category</label>
+              <select class="ui search dropdown" name="prod[category]">
+                <option value="">Select category</option>
+                <option value="Tshirt">Tshirt</option>
+                <option value="Jeans">Jeans</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label>Product Attribute</label>
+            <input type="text" name="prod[productAttribute]" placeholder="Enter the name of Product Attribute">
+        </div>
+        <div class="field">
+            <label>Price</label>
+            <input type="number" name="prod[Price]" placeholder="price">
+        </div>
+        <div class="field">
+            <label>Discount Price</label>
+            <input type="number" name="prod[disPrice]" placeholder="Discount Price">
+        </div>
+        <div class="field">
+            <label>Meta description</label>
+            <input type="text" name="prod[metaDescription]" placeholder="Enter some description about the product">
+        </div>
+        <div class="field">
+            <label>Tags</label>
+            <input type="textarea" name="prod[Tags]" placeholder="include tags">
+        </div>
+        <div class="field">
+            <label>Product description</label>
+            <input type="text" name="prod[productDescription]" placeholder="Enter some description about the product">
+        </div>
+        <input class = "ui violet big basic button" type="Submit">
+        <a href="/addnewproduct/cancel"><input class = "ui violet big basic button" type="cancel" value="Cancel"></a>
+    </form>
+</div>
+
+<%- include("partials/footer") %>
