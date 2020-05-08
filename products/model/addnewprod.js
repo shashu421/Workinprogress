@@ -31,7 +31,7 @@ var productattributeschema = new mongoose.Schema({
     },
     skuid:{
         type:Number
-    }
+    },
     Metadescription:{
         type:String
     },
