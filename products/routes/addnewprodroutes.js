@@ -28,6 +28,7 @@ router.route('/add').post((req,res) => {
         Category,
         Price,
         Disprice,
+        skuid,
         Metadescription,
         Tags,
         Productattribute,
@@ -57,6 +58,7 @@ router.route('/update/:id').post((req,res) => {
         product.Category = req.body.Category;
         product.Price = Number(req.body.Price);
         product.Disprice = Number(req.body.Disprice);
+        product.skuid = Number(req.body.skuid);
         product.Metadescription = req.body.Metadescription;
         product.Tags = req.body.Tags;
         product.Productattribute = req.body.Productattribute;
