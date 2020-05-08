@@ -29,6 +29,9 @@ var productattributeschema = new mongoose.Schema({
     Disprice:{
         type:Number
     },
+    skuid:{
+        type:number
+    }
     Metadescription:{
         type:String
     },
