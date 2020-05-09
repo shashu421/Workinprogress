@@ -29,7 +29,7 @@ var allproductsschema = new mongoose.Schema({
     Disprice:{
         type:Number
     },
-    skuid:{
+    Skuid:{
         type:Number
     },
     Metadescription:{
