@@ -29,7 +29,7 @@ router.route('/add').post((req,res) => {
         Category,
         Price,
         Disprice,
-        Skuid
+        Skuid,
         Metadescription,
         Tags,
         Productattribute,
