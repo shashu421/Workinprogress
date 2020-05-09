@@ -18,6 +18,7 @@ router.route('/add').post((req,res) => {
     const Category = req.body.Category;
     const Price = Number(req.body.Price);
     const Disprice = Number(req.body.Disprice);
+    const Skuid = Number(req.body.skuid);
     const Metadescription = req.body.Metadescription;
     const Tags = req.body.Tags;
     const Productattribute = req.body.Productattribute;
@@ -28,6 +29,7 @@ router.route('/add').post((req,res) => {
         Category,
         Price,
         Disprice,
+        Skuid
         Metadescription,
         Tags,
         Productattribute,
@@ -57,6 +59,7 @@ router.route('/update/:id').post((req,res) => {
         product.Category = req.body.Category;
         product.Price = Number(req.body.Price);
         product.Disprice = Number(req.body.Disprice);
+        product.Skuid = Number(req.body.Skuid);
         product.Metadescription = req.body.Metadescription;
         product.Tags = req.body.Tags;
         product.Productattribute = req.body.Productattribute;
@@ -90,6 +93,7 @@ module.exports = router;
 //     "Category": "Jeans",
 //     "Price": 456,
 //     "Disprice": 300,
+//      "Skuid":110,
 //     "Metadescription": "Hello",
 //     "Productdescription": "Great one with Nylon fibre",
 //     "__v": 0
