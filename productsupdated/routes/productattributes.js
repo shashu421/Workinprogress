@@ -14,7 +14,7 @@ router.route('/home').get((req,res) => {
 router.route('/add').post((req,res) => {
 
     const Name = req.body.Name;
-    const Variation = [req.body.Variation];
+    const Variation = req.body.Variation;
 
     const newProductAttribute = new productAttribute({
         Name,
@@ -41,7 +41,7 @@ router.route('/update/:id').post((req,res) => {
     productAttribute.findById(req.params.id)
         .then(product => {
         product.Name = req.body.Name;
-        product.Variation = [req.body.Variation];
+        product.Variation = req.body.Variation;
 
         product.save()
         .then(() => res.json('Product Attribute Updated!'))
