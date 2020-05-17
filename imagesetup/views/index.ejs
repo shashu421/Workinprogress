@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>
+            Upload image
+        </title>
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>File upload</h1>
+            <%= typeof msg != 'undefined' ? msg : '' %>
+            <form class="md-form" action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="file-field big">
+                  <a class="btn-floating btn-lg pink lighten-1 mt-0 float-left">
+                    <i class="fas fa-paperclip" aria-hidden="true"></i>
+                    <input type="file" name="myImage">
+                  </a>
+                  <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                  </div>
+                </div>
+                <button type="submit">Upload</button>
+              </form>
+              <br>
+              <img src="<%= typeof msg != 'undefined' ? file : '' %>" class="responsive-img">
+        </div>
+        
+    </body>
+</html>
