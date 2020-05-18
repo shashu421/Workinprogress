@@ -45,7 +45,10 @@ var allproductsschema = new mongoose.Schema({
         type:String 
     },
     Image:{
-        type:String
+        type:Array
+    },
+    DateNow:{
+        type:Date
     }
 });
 
